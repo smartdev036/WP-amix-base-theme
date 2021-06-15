@@ -1,0 +1,273 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+// Footer styles
+.footer {
+  position: relative;
+  background-color: $black;
+  color: $white;
+  @include mq("tablet", "max") {
+    padding-bottom: 50px;
+  }
+  a {
+    color: $white;
+  }
+  .container {
+    max-width: 1390px;
+    padding: 0 14px;
+    @include mq("tablet") {
+      padding: 0 50px;
+    }
+    @include mq("desktop-wide") {
+      padding: 0 14px;
+    }
+  }
+  &-content {
+    padding: 110px 0;
+    @include mq("tablet") {
+      padding: 80px 0;
+    }
+    .logo-wrapper {
+      margin: 85px auto;
+      text-align: center;
+      @include mq("tablet") {
+        margin: 120px auto 170px;
+      }
+      .logo-link {
+        margin: auto;
+      }
+    }
+    .footer-form {
+      .form {
+        max-width: 1140px;
+        margin: auto;
+        text-align: center;
+        h3 {
+          margin-bottom: 30px;
+          text-align: center;
+          color: white;
+          font-size: 28px;
+          line-height: 72px;
+          letter-spacing: -1.4px;
+          @include mq("tablet") {
+            font-size: 42px;
+            letter-spacing: -0.05em;
+          }
+        }
+        .form-row {
+          @include mq("tablet") {
+            display: flex;
+            align-items: center;
+          }
+        }
+        .form-column {
+          position: relative;
+          @include mq("tablet") {
+            flex: 0 0 calc(100% / 3);
+          }
+          .wpcf7-not-valid-tip {
+            margin-bottom: 10px;
+            @include mq("tablet") {
+              margin-top: 5px;
+              margin-bottom: 0;
+              position: absolute;
+            }
+          }
+        }
+        .form-control {
+          width: 100%;
+          margin-bottom: 15px;
+          padding: 15.5px;
+          background-color: #fff;
+          border: 1px solid #707070;
+          font: 600 18px/32px "Noir Std";
+          color: #2e2e2e;
+          letter-spacing: 0.025em;
+          &::placeholder {
+            text-align: center;
+            color: #2e2e2e;
+          }
+          @include mq("tablet") {
+            margin-bottom: 0;
+          }
+          &.wpcf7-email {
+            @include mq("tablet") {
+              border-left: 0;
+            }
+          }
+        }
+        .ajax-loader {
+          position: absolute;
+          top: 50%;
+          right: 30px;
+          margin: 0;
+          transform: translateY(-50%);
+        }
+        .select2 {
+          max-width: 380px;
+          width: 100% !important;
+          @include mq("tablet", "max") {
+            margin-bottom: 15px;
+            max-width: 100%;
+          }
+          .select2-selection--single {
+            padding: 15.5px;
+            background-color: #fff;
+            border: 1px solid #707070;
+            .select2-selection__rendered {
+              font: 600 18px/32px "Noir Std";
+              color: #2e2e2e;
+              text-transform: unset;
+            }
+          }
+        }
+        .select2.select2-container--default
+          .select2-selection--single
+          .select2-selection__arrow
+          b {
+          border-top-color: $black;
+          border-width: 10px 10.5px 0 10.5px;
+        }
+        select {
+          appearance: none;
+          background: no-repeat center right 30px
+            url("../images/footer-select-dropdown.svg");
+          background-size: auto;
+          text-align-last: center;
+        }
+        input[type="submit"] {
+          width: 100%;
+          background: #108330;
+          -webkit-appearance: none;
+          color: #fff;
+          border: none;
+          padding: 24.5px;
+          border-radius: 0;
+          text-transform: uppercase;
+          font: 700 13.39px/16.07px "futura-pt";
+          letter-spacing: 0.3em;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            filter: brightness(1.2);
+          }
+        }
+        .wpcf7 form.invalid .wpcf7-response-output,
+        .wpcf7 form.unaccepted .wpcf7-response-output {
+          display: inline-block;
+          margin: 20px auto 0;
+        }
+      }
+    }
+    .footer-widget {
+      display: flex;
+      margin: 0 -10px;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      @include mq("tablet") {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        align-items: flex-start;
+      }
+      .widget {
+        margin: 0;
+        padding: 0 10px;
+        @include mq("tablet") {
+          margin-bottom: 30px;
+        }
+        // flex: 0 0 100%;
+        // @include mq("tablet") {
+        //   margin-top: 0;
+        //   flex: 0 0 50%;
+        // }
+        // @include mq("desktop") {
+        //   margin-bottom: 0;
+        //   flex: 0 0 25%;
+        // }
+        &.footer-widget-text {
+          @include mq("tablet", "max") {
+            margin-bottom: 100px;
+          }
+          a {
+            font: 600 16px/28px "Noir Std";
+            @include mq("tablet") {
+              font-size: 18px;
+              line-height: 32px;
+            }
+            &:hover {
+              color: $green;
+            }
+          }
+        }
+        &.footer-widget-links {
+          @include mq("tablet") {
+            max-width: 180px;
+          }
+          a {
+            position: relative;
+            font: 500 18px/32px "futura-pt";
+            letter-spacing: 0;
+            &::after {
+              position: absolute;
+              left: 0;
+              bottom: -5px;
+              content: "";
+              width: 0;
+              height: 1px;
+              background: $white;
+              transition: width 0.3s ease-in-out;
+            }
+            &:hover::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bottom-bar {
+    display: flex;
+    padding: 20px 30px;
+    border-top: 1px solid #707070;
+    align-items: center;
+    justify-content: space-between;
+    font: 500 14px/32px "futura-pt", sans-serif;
+    letter-spacing: -0.05em;
+    color: #a7a7a7;
+    @include mq("tablet", "max") {
+      padding: 40px 15px;
+      flex-direction: column;
+      font-size: 14px;
+      .copyright {
+        margin-top: 24px;
+        order: 1;
+      }
+    }
+    a {
+      position: relative;
+      color: #a7a7a7;
+      margin-right: 10px;
+      &::after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        width: 0;
+        height: 1px;
+        background: $white;
+        transition: width 0.3s ease-in-out;
+      }
+      &:hover {
+        color: $white;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

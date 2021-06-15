@@ -1,0 +1,344 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the common parts in all application
+// -----------------------------------------------------------------------------
+// Custom Color Classes
+.text-primary {
+  color: $primary;
+}
+.bg-primary {
+  background-color: $primary;
+}
+.text-secondary {
+  color: $secondary;
+}
+.bg-secondary {
+  background-color: $secondary;
+}
+.bg-red {
+  background-color: $red;
+}
+.bg-green {
+  background-color: $green;
+}
+.bg-blue {
+  background-color: $blue;
+}
+.bg-yellow {
+  background-color: $yellow;
+}
+
+// Custom Container
+.container {
+  margin: auto;
+  padding: 0 30px;
+  @include mq("desktop-wide") {
+    padding: 0;
+    max-width: 1224px;
+  }
+}
+
+.container-fluid {
+  margin: auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.background-element {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.d-sm-only {
+  @include mq("tablet") {
+    display: none;
+  }
+}
+
+// Loading Screen
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 200vh;
+  pointer-events: none;
+  background-color: $secondary;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000;
+}
+
+// CURSOR
+.cursor {
+  display: none;
+  position: fixed;
+  background-color: $primary;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) background;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transform: scale(1);
+  &.active {
+    background-color: $secondary;
+    opacity: 1;
+    transform: scale(0);
+  }
+  &.menu-active {
+    opacity: 1;
+    transform: scale(0);
+  }
+  &.primary {
+    background-color: $primary !important;
+  }
+  &.white {
+    background-color: $white !important;
+  }
+  &.hovered {
+    opacity: 1;
+  }
+  @include mq("tablet") {
+    display: block;
+  }
+}
+.cursor-follower {
+  display: none;
+  position: fixed;
+  border: 1px solid $primary;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) background,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) border-color;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(2px, 2px);
+  overflow: hidden;
+  &.active {
+    opacity: 1;
+    transform: scale(3);
+    border-color: $secondary;
+  }
+  &.primary {
+    border-color: $primary !important;
+  }
+  &.white {
+    border-color: $white !important;
+  }
+  &.menu-active {
+    opacity: 1;
+    transform: scale(3);
+  }
+
+  &.hovered {
+    opacity: 1;
+  }
+  @include mq("tablet") {
+    display: block;
+  }
+}
+
+// Scrollbars
+.scrollbar-track {
+  width: 3px !important;
+  background: transparent !important;
+  .scrollbar-thumb {
+    width: 3px;
+    background: $blue;
+  }
+}
+
+// Select2
+.select2 {
+  &.select2-container--default {
+    .select2-selection--single {
+      border: 1px solid #fff;
+      border-radius: 0;
+      background-color: #0000;
+      cursor: pointer;
+      height: auto;
+      .select2-selection__rendered {
+        padding: 0;
+        color: $white;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .select2-selection__arrow {
+        top: 50%;
+        right: 25px;
+        transform: translateY(-50%);
+        b {
+          margin: 0;
+          top: 50%;
+          left: 50%;
+          border-color: #fff #0000 #0000 #0000;
+          border-width: 6px 6px 0 6px;
+          transform: translate(-50%, -50%);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  &.select2-container--open {
+    .select2-selection--single .select2-selection__arrow b {
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+  }
+}
+.select2-dropdown {
+  border-radius: 0;
+}
+.select2-search--dropdown {
+  display: none;
+}
+.select2-container {
+  .select2-dropdown {
+    ul {
+      li {
+        padding: 10px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+.select2-container--default
+  .select2-results__option--highlighted[aria-selected] {
+  background-color: lightgrey;
+}
+// Form
+.form-row {
+  margin-bottom: 15px;
+  @include mq("tablet") {
+    display: flex;
+  }
+}
+.form-col {
+  width: 100%;
+  max-width: 100%;
+  &.col-half {
+    @include mq("tablet") {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+}
+.form-control {
+  width: 100%;
+}
+
+// Nothing
+.content-nothing {
+  margin-bottom: 50px;
+  text-align: center;
+  .title {
+    margin-bottom: 30px;
+  }
+  .entry {
+    p {
+      margin-bottom: 20px;
+    }
+    fieldset {
+      border: none;
+    }
+  }
+}
+
+// Fancy box
+.fancybox {
+  &-button {
+    &--zoom,
+    &--play,
+    &--thumbs {
+      display: none !important;
+    }
+  }
+}
+
+// Slick slider
+.slick-slide {
+  line-height: 0;
+}
+.slick-dots {
+  position: absolute;
+  padding: 0;
+  left: 50%;
+  bottom: 34px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  transform: translateX(-50%);
+  z-index: 5;
+  li {
+    margin: 0;
+    padding: 0;
+    &::before {
+      content: none;
+    }
+    button {
+      margin: 0 2px;
+      padding: 0;
+      width: 11px;
+      height: 11px;
+      background: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 0;
+      opacity: 0.23;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+    }
+    &.slick-active {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+}
+.rect-slick-dot {
+  padding-bottom: 60px;
+  .slick-dots {
+    margin: 0;
+    bottom: 0;
+    left: 100px;
+    transform: none;
+    li {
+      button {
+        margin: 0 5px;
+        width: 30px;
+        height: 4px;
+        border-radius: 0;
+        opacity: 0.2;
+        @include mq("tablet") {
+          width: 58px;
+          height: 6.5px;
+        }
+      }
+      &.slick-active button {
+        opacity: 1;
+      }
+      &:hover button {
+        opacity: 0.6;
+      }
+    }
+  }
+  &.dot--black .slick-dots li button {
+    background-color: #050505;
+  }
+}
+
+// Popup
+.pum-close {
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $blue !important;
+  }
+}

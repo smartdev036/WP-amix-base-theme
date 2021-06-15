@@ -1,0 +1,33 @@
+//wp-config.php
+define('ALLOW_UNFILTERED_UPLOADS', true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Anna updated
+
+Fix points
+- functions.php/main.css, custom.js(main.min.css, custom.min.js)
+- member-grid.php -- wrong url
+- class-builtin.php/1015 -- roles(dropdown)
+
+2/4(3hours)
+ASAP-4
+High-5
+2/5
+Medium-2
+Medium-11
+
